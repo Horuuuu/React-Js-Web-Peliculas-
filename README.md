@@ -30,6 +30,20 @@ La interfáz de las imágenes de las peliculas la hice con Css Grid,donde cada p
 }
 ```
 <p>Para mostrarlas desde los datos de la api ,usé el metodo <strong>map</strong> para qué, por cada objeto del arreglo muestre una fila de una lista.</p>
-Usé la libreria<strong>React Router Dom</strong>para 
+Usé la libreria<strong>React Router Dom</strong> para declarar las rutas que usé en la aplicación.
+
+```
+ <Router>
+      <header> 
+       <Link to= "/"> <h1 className={styles.title}>Movies</h1></Link>
+      </header>
+      <main>
+      <Switch>
+          <Route exact path="/movies/:movieId"> <MovieDetails/></Route>
+          <Route path="/"><LandingPage/> </Route>        
+        </Switch>
+      </main>
+    </Router>
+```
 
 ![](src/img/moviedos.jpg)
