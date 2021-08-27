@@ -1,15 +1,9 @@
 import { useEffect, useState } from "react";
-
-
 import { get } from "./helpers/Api";
 import { useQuery } from "./hooks/UseQuery";
 import { MovieCard } from "./MovieCard";
-
 import styles from "./MoviesGrid.module.css";
 import { Spinner } from "./Spinner";
-
-
-
 
 export function MoviesGrid() {
   const [movies,setMovies]=useState([]);
@@ -17,7 +11,6 @@ export function MoviesGrid() {
 
 const query= useQuery();
 const search = query.get("search");
-
 
   useEffect(() => {
     setIsLoading(true);
