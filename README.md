@@ -1,70 +1,62 @@
-# Getting Started with Create React App
+<h3>Web de peliculas con buscador:mag:</h3>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Proyecto final de curso de React Js,practica de Hooks ,routing,formularios,props,CSS Grid y Flex,Apis ,@mediaquerys y más.
+<p>:file_folder:La estructura de las carpetas es: Componentes, para los componentes con sus respectivos módulos de css,dentro también está helpers que contiene la función que hace la petición a la api y hooks que contiene el hook useQuery.Por otro lado está Pages para las páginas principales que se acceden desde las rutas. </p>
+Cuatro componentes :
+<ul>
+  <li>MovieCard:para la tarjeta de cada pelicula. </li>
+  <li>MoviesGrid:para estructurar la grilla de los posters de las peliculas.</li>
+  <li>Search:para el formulario de busqueda.</li>
+  <li>Spinner:el spinner de carga.</li>
+</ul>
 
-## Available Scripts
+![](src/img/movie.gif)
 
-In the project directory, you can run:
+La interfáz de las imágenes de las peliculas la hice con Css <strong>Grid</strong>,donde cada película es un item y para las columnas grid-template-columns con la función de repetir y auto-fill para que se generen columnas de manera automática con un ancho determinado .Para la separacion entre imágenes usé gap.
 
-### `npm start`
+```
+.moviesGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 230px);
+  gap: 40px;
+  padding: 40px;
+  justify-content: center;
+}
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+@media (max-width: 560px) {
+  .moviesGrid {
+    grid-template-columns: 100%;
+  }
+}
+```
+<p>Para mostrarlas desde los datos de la api ,usé el metodo <strong>map</strong> para qué, por cada objeto del arreglo muestre una fila de una lista.</p>
+Usé la libreria<strong>React Router Dom</strong> para declarar las rutas que usé en la aplicación.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+```
+ <Router>
+      <header> 
+       <Link to= "/"> <h1 className={styles.title}>Movies</h1></Link>
+      </header>
+      <main>
+      <Switch>
+          <Route exact path="/movies/:movieId"> <MovieDetails/></Route>
+          <Route path="/"><LandingPage/> </Route>        
+        </Switch>
+      </main>
+    </Router>
+```
+La página de detalles de cada pelicula la estructuré con <strong>Css Flex</strong>,en el cual en pantalla grande hay dos elementos en fila(imagen y sinopsis)y en pantalla pequeña ,en una columna ,un elemento encima del otro porque no hay espacio para los dos, Wrap empuja hacia abajo el elemento que no entra en la pantalla.:point_down:	
 
-### `npm test`
+```
+.detailsContainer {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+![](src/img/moviedos.jpg)
 
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Para la Api de TheMoviedb.com,usé <strong>Fetch</strong> y le pasé la Url como sugería el sitio y .then con la respuesta de  un objeto formato json. Usé <strong>useEffect</strong>para que la funcion se ejecuté una vez ,cuando se carga por primera vez.
+Para que se cargue con las peliculas actualizadas usé <strong>useState</strong>.
+Para capturar el parametro Id y usarlo  ,usé el hook de router dom <strong>useParams</strong> .

@@ -9,16 +9,7 @@ export function MovieDetails(){
     const {movieId} = useParams();
     const [isLoading,setIsLoading]= useState(true);
     const [movie,setMovie] = useState(null);
-
-
-   
-
     
-    
-
-
-
-
 useEffect(() => {
     setIsLoading(true);
     get("/movie/" + movieId).then(data =>{
@@ -32,13 +23,9 @@ if(isLoading){
 return <Spinner/>
 }
 
-
-
-
     const imageUrl = "https://image.tmdb.org/t/p/w300" + movie.poster_path;
     return <div className={styles.detailsContainer}>
-
-        
+       
         <img className={styles.col + " " + styles.movieImage} src={imageUrl} alt={movie.title} />
         <div className={styles.col + " " +  styles.movieDetails} >
             <p>

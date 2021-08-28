@@ -16,8 +16,6 @@ export function Search(){
          (search || "") ; 
     }, [search]);
 
-
-
 const handleSubmit = (e) =>{
     e.preventDefault();
     history.push("/?search=" + searchText)
