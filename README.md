@@ -1,8 +1,8 @@
-<h3>Web de peliculas con buscador.</h3>
+<h3>Web de peliculas con buscador:mag:</h3>
 
-Proyecto final de curso de React Js,practica de Hooks ,routing,formularios,props,CSS Grid y flex,Apis ,@mediaquerys y más.
-<p>La estructura de las carpetas es: Componentes, para los componentes con sus respectivos módulos de css,dentro también está helpers que contiene la función que hace la petición a la api y hooks que contiene el hook useQuery.Por otro lado está Pages para las páginas principales que se acceden desde las rutas. </p>
-Cuatro componentes:
+Proyecto final de curso de React Js,practica de Hooks ,routing,formularios,props,CSS Grid y Flex,Apis ,@mediaquerys y más.
+<p>:file_folder:La estructura de las carpetas es: Componentes, para los componentes con sus respectivos módulos de css,dentro también está helpers que contiene la función que hace la petición a la api y hooks que contiene el hook useQuery.Por otro lado está Pages para las páginas principales que se acceden desde las rutas. </p>
+Cuatro componentes :
 <ul>
   <li>MovieCard:para la tarjeta de cada pelicula. </li>
   <li>MoviesGrid:para estructurar la grilla de los posters de las peliculas.</li>
@@ -12,7 +12,7 @@ Cuatro componentes:
 
 ![](src/img/movie.gif)
 
-La interfáz de las imágenes de las peliculas la hice con Css Grid,donde cada película es un item y para las columnas grid-template-columns con la función de repetir y auto-fill para que se generen columnas de manera automática con un ancho determinado .Para la separacion entre imágenes usé gap.
+La interfáz de las imágenes de las peliculas la hice con Css <strong>Grid</strong>,donde cada película es un item y para las columnas grid-template-columns con la función de repetir y auto-fill para que se generen columnas de manera automática con un ancho determinado .Para la separacion entre imágenes usé gap.
 
 ```
 .moviesGrid {
@@ -45,5 +45,17 @@ Usé la libreria<strong>React Router Dom</strong> para declarar las rutas que us
       </main>
     </Router>
 ```
+La página de detalles de cada pelicula la estructuré con <strong>Css Flex</strong>,en el cual en pantalla grande hay dos elementos en fila(imagen y sinopsis)y en pantalla pequeña ,en una columna ,un elemento encima del otro porque no hay espacio para los dos, Wrap empuja hacia abajo el elemento que no entra en la pantalla.:point_down:	
+
+```
+.detailsContainer {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+```
 
 ![](src/img/moviedos.jpg)
+
+Para la Api de TheMoviedb.com,usé <strong>Fetch</strong>y le pasé la Url como sugería el sitio y <strong>useEffect</strong>.
+Para que se cargue con las peliculas actualizadas usé <strong>useState</strong>.
