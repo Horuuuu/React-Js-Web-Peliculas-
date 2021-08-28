@@ -60,3 +60,6 @@ La página de detalles de cada pelicula la estructuré con <strong>Css Flex</str
 Para la Api de TheMoviedb.com,usé <strong>Fetch</strong> y le pasé la Url como sugería el sitio y .then con la respuesta de  un objeto formato json. Usé <strong>useEffect</strong>para que la funcion se ejecuté una vez ,cuando se carga por primera vez.
 Para que se cargue con las peliculas actualizadas usé <strong>useState</strong>.
 Para capturar el parametro Id y usarlo  ,usé el hook de router dom <strong>useParams</strong> .
+
+![](src/img/ReactNode.jpg)
+
