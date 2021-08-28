@@ -30,7 +30,7 @@ La interfáz de las imágenes de las peliculas la hice con Css <strong>Grid</str
 }
 ```
 <p>Para mostrarlas desde los datos de la api ,usé el metodo <strong>map</strong> para qué, por cada objeto del arreglo muestre una fila de una lista.</p>
-Usé la libreria<strong>React Router Dom</strong> para declarar las rutas que usé en la aplicación.
+Usé la libreria <strong>React Router Dom</strong> para declarar las rutas que usé en la aplicación.
 
 ```
  <Router>
