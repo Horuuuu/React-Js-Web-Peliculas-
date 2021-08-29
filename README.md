@@ -31,7 +31,7 @@ La interfáz de las imágenes de las peliculas la hice con Css <strong>Grid</str
 ```
 <p>Para mostrarlas desde los datos de la api ,usé el metodo <strong>map</strong> para qué, por cada objeto del arreglo muestre una fila de una lista.</p>
 Usé la libreria <strong>React Router Dom</strong> para declarar las rutas que usé en la aplicación.Sí la ruta coincide con el path movie:id ,lo direcciona a la página de detalles de la pelicula y si coincide con la ruta de / ruta principal se direcciona a la grilla de peliculas.
-<p>Usé el componente <strong>Link</strong> de React Router Dom para que cuando se clickeé en la imagen de la pelicula,cambie la ruta a la de detalles </p>
+<p>Usé el componente <strong>Link</strong> de React Router Dom para que cuando se clickeé en la imagen de la pelicula,cambie la ruta a la de detalles. </p>
 
 ```
  <Router>
@@ -62,7 +62,7 @@ Para la Api de TheMoviedb.com,usé <strong>Fetch</strong> y le pasé la Url como
 Para que se cargue con las peliculas actualizadas usé <strong>useState</strong>.
 Para capturar el parametro Id de cada pelicula y usarlo  ,usé el hook de router dom <strong>useParams</strong> .
 <p>Para indicar que se estan cargando las peliculas hice, un spinner de carga o loader y a travez de <strong>useState</strong> con un estado inicial verdadero y un condicional para saber si habia terminado de cargar.El icono es de React Icons.</p> 
-
+Link:
 
 ![](src/img/ReactNode.jpg)
 
