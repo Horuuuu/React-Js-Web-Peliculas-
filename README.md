@@ -62,7 +62,7 @@ Para la Api de TheMoviedb.com,usé <strong>Fetch</strong> y le pasé la Url como
 Para que se cargue con las peliculas actualizadas usé <strong>useState</strong>.
 Para capturar el parametro Id de cada pelicula y usarlo  ,usé el hook de router dom <strong>useParams</strong> .
 <p>Para indicar que se estan cargando las peliculas hice, un spinner de carga o loader y a travez de <strong>useState</strong> con un estado inicial verdadero y un condicional para saber si habia terminado de cargar.El icono es de React Icons.</p> 
-Link:
+Link:https://eloquent-gates-0a1bfa.netlify.app/
 
 ![](src/img/ReactNode.jpg)
 
